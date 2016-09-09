@@ -24,10 +24,13 @@ module UnionFind
         expect(implementation.count).to eq(1)
       end
       it "should have two elements after another #add" do
+        implementation.add(first_object)
         implementation.add(second_object)
         expect(implementation.count).to eq(2)
       end
       it "should have three elements after another #add" do
+        implementation.add(first_object)
+        implementation.add(second_object)
         implementation.add(third_object)
         expect(implementation.count).to eq(3)
       end
@@ -50,7 +53,10 @@ module UnionFind
         end
       end
       context "with a double connection set" do
-        before { implementation.connect(second_object, third_object) }
+        before do
+          implementation.connect(first_object, second_object)
+          implementation.connect(second_object, third_object)
+        end
         it "should return true" do
           expect(implementation.connected?(second_object, third_object)).to be_truthy
           expect(implementation.connected?(first_object, third_object)).to be_truthy
