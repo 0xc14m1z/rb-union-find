@@ -2,7 +2,7 @@ require "spec_helper"
 
 module UnionFind
 
-  RSpec.shared_examples "a union find implementation" do
+  RSpec.shared_examples "a union-find implementation" do
 
     let(:implementation)  { described_class.new }
     let(:first_object)    { Object.new }
