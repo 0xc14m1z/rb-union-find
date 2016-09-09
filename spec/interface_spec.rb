@@ -14,6 +14,16 @@ module UnionFind
     let(:implementation)  { Implementation.new }
     let(:object)          { Object.new }
 
+    describe "#count" do
+      it "should raise an error if not implemented" do
+        expect { implementation.count }.to raise_error NotImplementedError
+      end
+      it "shouldn't raise an error if implemented" do
+        stub_method(implementation, :count)
+        expect { implementation.count }.not_to raise_error NotImplementedError      # test for this specific error in order to allow others
+      end
+    end
+
     describe "#add" do
       it "should raise an error if not implemented" do
         expect { implementation.add(object) }.to raise_error NotImplementedError
