@@ -1,5 +1,7 @@
 # rb-union-find
 
+[![Build Status](https://travis-ci.org/ciamiz/rb-union-find.svg?branch=master)](https://travis-ci.org/ciamiz/rb-union-find)
+
 Implementation of algorithms to solve the dynamic connectivity problem in Ruby:
 
 * quick find
@@ -18,7 +20,7 @@ Each implementation has the following methods:
 
 ## specs
 
-There are only two specs for all the implementations. 
+There are only two specs for all the implementations.
 
 1. one tests the appliance to the interface. An implementation must override several methods;
 
