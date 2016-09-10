@@ -1,20 +1,6 @@
 module UnionFind
 
-  class QuickUnion < Interface
-
-    attr_reader :components
-
-    def initialize
-      @components = Hash.new
-    end
-
-    def count
-      @components.keys.size
-    end
-
-    def add(obj)
-      @components[obj] = obj
-    end
+  class QuickUnion < QuickFind
 
     def connect(a, b)
       @components[root(a)] = root(b)
