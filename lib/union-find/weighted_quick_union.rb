@@ -38,9 +38,8 @@ module UnionFind
     private
 
       def root(obj)
-        parent = @components[obj]
-        parent = @components[parent] while @components[parent] != parent
-        parent
+        obj = @components[obj] while @components[obj] != obj
+        obj
       end
 
   end
