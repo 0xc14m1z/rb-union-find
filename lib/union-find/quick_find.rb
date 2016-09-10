@@ -21,9 +21,6 @@ module UnionFind
       for k in @data.keys
         @data[k] = b if @data[k] == check_value
       end
-      # @data.each do |key, value|
-      #   @data[key] = b if value == current_a_link
-      # end
     end
 
     def connected?(a, b)
