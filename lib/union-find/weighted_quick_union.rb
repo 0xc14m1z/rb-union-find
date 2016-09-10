@@ -1,17 +1,12 @@
 module UnionFind
 
-  class WeightedQuickUnion < Interface
+  class WeightedQuickUnion < QuickUnion
 
-    attr_reader :components
     attr_reader :weights
 
     def initialize
       @components = Hash.new
       @weights = Hash.new
-    end
-
-    def count
-      @components.keys.size
     end
 
     def add(obj)
@@ -29,10 +24,6 @@ module UnionFind
         @components[root_b] = root_a
         @weights[root_a] += @weights[root_b]
       end
-    end
-
-    def connected?(a, b)
-      root(a) == root(b)
     end
 
     private
