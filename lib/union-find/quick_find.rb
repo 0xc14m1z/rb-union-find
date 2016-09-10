@@ -2,7 +2,7 @@ module UnionFind
 
   class QuickFind < Interface
 
-    attr_reader :data
+    attr_reader :components
 
     def initialize
       @components = Hash.new
