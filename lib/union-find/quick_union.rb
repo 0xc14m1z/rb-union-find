@@ -5,19 +5,19 @@ module UnionFind
     attr_reader :data
 
     def initialize
-      @data = Hash.new
+      @components = Hash.new
     end
 
     def count
-      @data.keys.size
+      @components.keys.size
     end
 
     def add(obj)
-      @data[obj] = obj
+      @components[obj] = obj
     end
 
     def connect(a, b)
-      @data[root(a)] = root(b)
+      @components[root(a)] = root(b)
     end
 
     def connected?(a, b)
@@ -27,8 +27,8 @@ module UnionFind
     private
 
       def root(obj)
-        parent = @data[obj]
-        parent = @data[parent] while @data[parent] != parent
+        parent = @components[obj]
+        parent = @components[parent] while @components[parent] != parent
         parent
       end
 
