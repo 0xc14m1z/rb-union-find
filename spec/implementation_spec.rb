@@ -37,6 +37,11 @@ module UnionFind
     end
 
     describe "connecting and checking connections" do
+      before do
+        implementation.add(first_object)
+        implementation.add(second_object)
+        implementation.add(third_object)
+      end
       context "with no connections set" do
         it "should return false" do
           expect(implementation.connected?(first_object, second_object)).to be_falsy
